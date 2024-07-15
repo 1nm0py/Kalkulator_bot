@@ -11,7 +11,7 @@ bot.on('message', async (msg) => {
     const chatId = msg.chat.id
 
     if (text === "/start") {
-        return bot.sendMessage(chatId, `Assalomu alaykum ${msg.from?.first_name + msg.from?.last_name}. Hisoblagich botga hush kelibsiz :) \n \n Agar botga tushunmasangiz => \n \n 1) Menu tugmasini bosing \n 2) help sozini boshing`)
+        return bot.sendMessage(chatId, `Assalomu alaykum ${msg.from?.first_name+ " " + msg.from?.last_name}. Hisoblagich botga hush kelibsiz :) \n \n Agar botga tushunmasangiz => \n \n 1) Menu tugmasini bosing \n 2) help sozini boshing`)
         // const a = text.typeof == Number
     }
     if (text === "/help") {
