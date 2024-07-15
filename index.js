@@ -15,7 +15,18 @@ bot.on('message', async (msg) => {
         // const a = text.typeof == Number
     }
     if (text === "/help") {
-        return bot.sendMessage(chatId, `Bu botga \n  \n 1-(raqam), \n 2-(raqam), \n 3-(Ishora (+, -, *, /)) \n \n 4) Sizga javob keladi`)
+        return bot.sendMessage(chatId, `Bu botga \n  \n 1-(raqam), \n 2 -(Ishora (+, -, *, /)) \n 3-(raqam), \n \n Namuna: (num) (+,-,*,/) (num) \n \n 4) Sizga javob keladi`)
     }
-    
+
+
+
+    if (!msg.text.startsWith('/')) {
+        try {
+            const expression = msg.text;
+            const result = eval(expression);
+            bot.sendMessage(chatId, `Natija: ${result}`);
+        } catch (e) {
+            bot.sendMessage(chatId, 'Xato! Iltimos, to\'g\'ri ifoda kiriting.');
+        }
+    }
 })
